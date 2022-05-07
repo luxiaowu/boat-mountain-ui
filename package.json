@@ -1,13 +1,13 @@
 {
   "name": "boat-mountain-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "homepage": "https://github.com/luxiaowu/boat-mountain-ui",
   "repository": {
     "type": "git",
     "url": "https://github.com/luxiaowu/boat-mountain-ui"
   },
-  "main": "lib/boundle.min.js",
+  "main": "lib/index.min.js",
   "files": [
     "dist",
     "lib",

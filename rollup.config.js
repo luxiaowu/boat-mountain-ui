@@ -12,11 +12,12 @@ export default {
   input: "src/index.ts",
   output: [
     {
-      file: "lib/bundle.js",
+      file: "lib/index.js",
       format: "es",
+      name: "boatUI",
     },
     {
-      file: "lib/bundle.min.js",
+      file: "lib/index.min.js",
       format: "es",
       name: "boatUI",
       plugins: [terser()],
