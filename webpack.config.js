@@ -1,24 +1,24 @@
-const path = require('path')
+const path = require("path");
 
 module.exports = {
-  mode: 'development',
-  entry: './App.jsx',
+  mode: "development",
+  entry: "./App.tsx",
   module: {
     rules: [
       {
         test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ["babel-loader"],
       },
       {
         test: /.css$/,
-        use: ['style-loader', 'css-loader']
-      }
-    ]
+        use: ["style-loader", "css-loader"],
+      },
+    ],
   },
   resolve: {
-    alias: { '@': path.resolve(__dirname, 'src') },
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    alias: { "@": path.resolve(__dirname, "src") },
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
-  devServer: {}
-}
+  devServer: {},
+};

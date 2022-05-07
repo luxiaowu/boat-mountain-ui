@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { Tree, Select } from 'antd'
+import React, { useState } from "react";
+import { Tree, Select } from "antd";
 
 const BoatTreeSelect = ({ treeData }) => {
-  const [value, setValue] = useState([])
+  const [value, setValue] = useState([]);
 
   const onSelect = (selectedKeys, info) => {
     // console.log('selected', selectedKeys, info)
@@ -12,9 +12,9 @@ const BoatTreeSelect = ({ treeData }) => {
           (acc, cur) => (acc.includes(cur) ? acc : [...acc, cur]),
           []
         )
-      )
+      );
     }
-  }
+  };
 
   return (
     <Select
@@ -26,7 +26,7 @@ const BoatTreeSelect = ({ treeData }) => {
       value={value}
       onChange={setValue}
     />
-  )
-}
+  );
+};
 
-export default BoatTreeSelect
+export default BoatTreeSelect;

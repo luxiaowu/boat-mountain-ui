@@ -1,37 +1,39 @@
-import path from 'path'
-import alias from '@rollup/plugin-alias'
-import { terser } from 'rollup-plugin-terser'
-import resolve from '@rollup/plugin-node-resolve'
-import babel from '@rollup/plugin-babel'
+import path from "path";
+import alias from "@rollup/plugin-alias";
+import { terser } from "rollup-plugin-terser";
+import resolve from "@rollup/plugin-node-resolve";
+import babel from "@rollup/plugin-babel";
 
 const customResolver = resolve({
-  extensions: ['.js', '.jsx', '.ts', '.tsx']
-})
+  extensions: [".js", ".jsx", ".ts", ".tsx"],
+});
 
 export default {
-  input: 'src/main.js',
+  input: "src/index.ts",
   output: [
     {
-      file: 'lib/bundle.js',
-      format: 'es'
+      file: "lib/bundle.js",
+      format: "es",
     },
     {
-      file: 'lib/bundle.min.js',
-      format: 'es',
-      name: 'boatUI',
-      plugins: [terser()]
-    }
+      file: "lib/bundle.min.js",
+      format: "es",
+      name: "boatUI",
+      plugins: [terser()],
+    },
   ],
   plugins: [
     alias({
-      entries: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
-      customResolver
+      entries: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
+      customResolver,
     }),
-    resolve(),
+    resolve({
+      extensions: [".js", ".jsx", ".ts", ".tsx"],
+    }),
     babel({
-      babelHelpers: 'bundled',
-      extensions: ['.js', '.jsx', '.ts', '.tsx']
-    })
+      babelHelpers: "bundled",
+      extensions: [".js", ".jsx", ".ts", ".tsx"],
+    }),
   ],
-  external: ['react', 'antd']
-}
+  external: ["react", "antd"],
+};
